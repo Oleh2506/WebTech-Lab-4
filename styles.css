@@ -1,0 +1,209 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+}
+
+html {
+    background-color: #E1B7BF;
+}
+
+body {
+    background: linear-gradient(to bottom, #E1B7BF 383px, #59437A 383px 646px, #E1B7BF 646px);
+    background-repeat: no-repeat;
+}
+
+@font-face {
+    font-family: "Neon";
+    src: url("src/fonts/Neon.ttf");
+}
+
+@font-face {
+    font-family: "TruenoBold";
+    src: url("src/fonts/TruenoBd.otf");
+}
+
+.logo {
+    font-family: "Neon";
+    color:#59437A;
+}
+
+.hammenu {
+    color: #C262AF;
+}
+
+.hammenu:hover {
+    cursor: pointer;
+    color:#59437A;
+}
+
+.container {
+    max-width: 944px;
+    margin: 0 auto;
+    box-sizing: border-box;
+    padding: 16px;
+    overflow-wrap: break-word;
+}
+
+header > .container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 28px;
+}
+
+.main > header > .container {
+    justify-content: center;
+    flex-direction: column;
+    padding-top: 40px;
+    text-align: center;
+}
+
+.main-title {
+    color:#C262AF;
+    font-size: 48px;
+    font-family: "TruenoBold";
+}
+
+.main > .container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 21px;
+    grid-template-areas: 
+        "box1 box4 box4"
+        "box1 box2 box5"
+        "box1 box2 box3"
+        "box7 box2 box3"
+        "box7 box6 box3"
+        "box8 box8 box8";
+    /* grid-template-rows: 10% 10% 60% 10% 10%; */
+    grid-template-rows: 1fr 1fr 2fr 1fr 1fr 75px;
+}
+
+.box {
+    background-color: white;
+    box-sizing: border-box;
+    border-radius: 10px;
+    padding: 24px;
+    min-height: 498px;
+    font-family: "Calibri Light";
+    justify-content: center;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.box:hover {
+    box-shadow: rgba(0, 0, 0, 0.7) 0px 5px 15px;
+}
+
+.box-title {
+    padding: 16px;
+    font-weight: normal;
+    text-align: center;
+}
+
+.box-text {
+    padding-right: 16px;
+    padding-left: 16px;
+    text-align: justify;
+    text-align-last: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 5; /* number of lines to show */
+    line-clamp: 5; 
+    -webkit-box-orient: vertical;
+
+}
+
+.box-learn-more {
+    padding: 16px;
+    
+    font-family: "TruenoBold";
+    text-decoration: none;
+    font-size: 12px;
+    text-align: center;
+}
+
+.a-learn-more {
+    text-decoration: none;
+    color: #C262AF;
+}
+
+.a-learn-more:hover {
+    color:#59437A;
+}
+
+.box > img {
+    width: 100%;
+    /* height: 171px; */
+    min-height: 171px;
+    object-fit: cover;
+}
+
+.box1 {
+    grid-area: box1;
+}
+
+.box2 {
+    grid-area: box2;
+}
+
+.box3 {
+    grid-area: box3;
+}
+
+@media screen and (max-width:768px) {
+    .main > .container {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+        "box1"
+        "box2"
+        "box3"
+        "box4";
+        grid-template-rows: 1fr 1fr 1fr 75px;
+    }
+
+    .box > img {
+        height: auto;
+    }
+
+    .container {
+        padding-left: 48px;
+        padding-right: 48px;
+    }
+}
+
+@media screen and (max-width:360px) {
+    .main-title {
+        font-size: 24px;
+    }
+}
+
+@media screen and (max-width:260px) {
+    .container {
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+}
+
+footer {
+    background-color: #333333;
+}
+
+footer > .container {
+    color: white;
+    min-height: 114px;
+    max-width: 344px;
+    justify-content: center;
+    flex-direction: column;
+    text-align: justify;
+    text-align-last: center;
+    font-family: "Calibri Light";
+}
+
